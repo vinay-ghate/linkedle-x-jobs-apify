@@ -1,14 +1,21 @@
 {
+  "$schema": "https://apify-projects.github.io/actor-json-schemas/output.json?v=0.3",
   "actorOutputSchemaVersion": 1,
   "title": "LinkedIn Jobs Scraper Output Schema",
-  "description": "Describes output dataset storage containing scraped LinkedIn job listings.",
+  "description": "Defines dataset job search results and key-value store cache collections for Apify Console UI and AI agent integration.",
   "type": "object",
   "properties": {
-    "dataset": {
+    "results": {
       "type": "string",
-      "title": "Default Dataset Items",
-      "description": "Collection of scraped LinkedIn job listings.",
+      "title": "Job Results",
+      "description": "Structured LinkedIn job search listings including titles, companies, locations, skills, salary, and URLs.",
       "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "cachedSearchResults": {
+      "type": "string",
+      "title": "Cached Query Data",
+      "description": "24-hour cached search query payloads stored in key-value store for deduplication.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys?collection=cached-search-results"
     }
   }
 }
