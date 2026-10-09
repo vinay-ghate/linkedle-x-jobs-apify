@@ -6,7 +6,7 @@
     "cached-search-results": {
       "title": "Cached Search Results",
       "description": "24-hour cached LinkedIn job search query responses used for deduplication and performance acceleration.",
-      "key": "cache_"
+      "keyPrefix": "cache_"
     },
     "run-inputs-and-state": {
       "title": "Run Input & System Records",

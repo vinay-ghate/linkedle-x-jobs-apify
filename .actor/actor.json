@@ -3,7 +3,7 @@
   "name": "linkedin-jobs-search-url-scraper",
   "title": "LinkedIn Jobs & Search URL Scraper",
   "description": "Enterprise-grade scraper for LinkedIn Jobs and direct LinkedIn search URLs. Supports multi-filter search, Indian & global markets, batch keywords, deduplication, and pay-per-result integration.",
-  "version": "1.0",
+  "version": "1.1",
   "input": "./input_schema.json",
   "output": "./output_schema.json",
   "categories": [
@@ -14,6 +14,22 @@
   "maxMemoryMbytes": 4096,
   "storages": {
     "dataset": "./dataset_schema.json",
-    "keyValueStore": "./key_value_store_schema.json"
+    "keyValueStore": {
+      "actorKeyValueStoreSchemaVersion": 1,
+      "title": "LinkedIn Jobs Scraper Key-Value Store Schema",
+      "description": "Schema categorizing collections and key prefixes stored in the default Key-Value Store.",
+      "collections": {
+        "cached-search-results": {
+          "title": "Cached Search Results",
+          "description": "24-hour cached LinkedIn job search query responses used for deduplication and performance acceleration.",
+          "keyPrefix": "cache_"
+        },
+        "run-inputs-and-state": {
+          "title": "Run Input & System Records",
+          "description": "Default input configuration (INPUT) and system key-value records generated during execution.",
+          "key": "INPUT"
+        }
+      }
+    }
   }
 }

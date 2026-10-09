@@ -9,7 +9,7 @@
       "type": "string",
       "title": "Job Results",
       "description": "Structured LinkedIn job search listings including titles, companies, locations, skills, salary, and URLs.",
-      "template": "{{links.apiDefaultDatasetUrl}}/items"
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
     },
     "cachedSearchResults": {
       "type": "string",
