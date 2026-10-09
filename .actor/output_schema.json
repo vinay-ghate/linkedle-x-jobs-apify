@@ -1,0 +1,14 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "LinkedIn Jobs Scraper Output Schema",
+  "description": "Describes output dataset storage containing scraped LinkedIn job listings.",
+  "type": "object",
+  "properties": {
+    "dataset": {
+      "type": "string",
+      "title": "Default Dataset Items",
+      "description": "Collection of scraped LinkedIn job listings.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

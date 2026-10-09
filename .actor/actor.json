@@ -3,8 +3,9 @@
   "name": "linkedin-jobs-search-url-scraper",
   "title": "LinkedIn Jobs & Search URL Scraper",
   "description": "Enterprise-grade scraper for LinkedIn Jobs and direct LinkedIn search URLs. Supports multi-filter search, Indian & global markets, batch keywords, deduplication, and pay-per-result integration.",
-  "version": "0.0",
+  "version": "1.0",
   "input": "./input_schema.json",
+  "output": "./output_schema.json",
   "categories": [
     "SCRAPERS",
     "JOBS"
