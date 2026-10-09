@@ -1,0 +1,17 @@
+{
+  "actorSpecification": 1,
+  "name": "linkedin-jobs-search-url-scraper",
+  "title": "LinkedIn Jobs & Search URL Scraper",
+  "description": "Enterprise-grade scraper for LinkedIn Jobs and direct LinkedIn search URLs. Supports multi-filter search, Indian & global markets, batch keywords, deduplication, and pay-per-result integration.",
+  "version": "0.0",
+  "input": "./input_schema.json",
+  "categories": [
+    "SCRAPERS",
+    "JOBS"
+  ],
+  "minMemoryMbytes": 128,
+  "maxMemoryMbytes": 4096,
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}

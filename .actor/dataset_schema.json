@@ -1,0 +1,74 @@
+{
+  "actorSpecification": 1,
+  "title": "LinkedIn Jobs Scraper Dataset",
+  "description": "Output dataset schema for LinkedIn job search listings with full descriptions, URLs, and skill insights.",
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "job_title",
+          "company_name",
+          "location",
+          "is_remote",
+          "posted_via",
+          "salary",
+          "date",
+          "skills_detected",
+          "URL",
+          "description",
+          "scrapedAt"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "job_title": {
+            "label": "Job Title",
+            "format": "text"
+          },
+          "company_name": {
+            "label": "Company",
+            "format": "text"
+          },
+          "location": {
+            "label": "Location",
+            "format": "text"
+          },
+          "is_remote": {
+            "label": "Remote?",
+            "format": "boolean"
+          },
+          "posted_via": {
+            "label": "Posted Via",
+            "format": "text"
+          },
+          "salary": {
+            "label": "Salary",
+            "format": "text"
+          },
+          "date": {
+            "label": "Posted Date",
+            "format": "text"
+          },
+          "skills_detected": {
+            "label": "Skills Detected",
+            "format": "array"
+          },
+          "URL": {
+            "label": "Job Link",
+            "format": "link"
+          },
+          "description": {
+            "label": "Job Description",
+            "format": "text"
+          },
+          "scrapedAt": {
+            "label": "Scraped At",
+            "format": "date"
+          }
+        }
+      }
+    }
+  }
+}

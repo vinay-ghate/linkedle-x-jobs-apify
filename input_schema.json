@@ -1,0 +1,155 @@
+{
+  "title": "LinkedIn Jobs & Search URL Scraper Input Schema",
+  "description": "Configure search parameters, filters, or direct LinkedIn search URLs to scrape job listings.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchUrl": {
+      "title": "LinkedIn Search URL",
+      "type": "string",
+      "description": "Paste a direct LinkedIn job search URL (e.g. https://www.linkedin.com/jobs/search-results/?keywords=Schaeffler&f_TPR=r86400). If provided, keywords and filters will be automatically extracted.",
+      "editor": "textfield",
+      "prefill": ""
+    },
+    "includeKeyword": {
+      "title": "Keywords / Job Title",
+      "type": "string",
+      "description": "Job title or skill keywords to search (e.g. software engineer, React, Data Scientist).",
+      "default": "software engineer",
+      "prefill": "software engineer",
+      "editor": "textfield"
+    },
+    "keywords": {
+      "title": "Batch Keywords List",
+      "type": "array",
+      "description": "List of keywords to search in batch (e.g. ['Frontend Developer', 'Backend Developer']).",
+      "editor": "json",
+      "items": {
+        "type": "string"
+      }
+    },
+    "locationName": {
+      "title": "Location Name",
+      "type": "string",
+      "description": "City, region, or country for job search (e.g., India, Bengaluru, Mumbai).",
+      "default": "India",
+      "prefill": "India",
+      "editor": "textfield"
+    },
+    "countryName": {
+      "title": "Country Code / Name",
+      "type": "string",
+      "description": "Target country name or identifier.",
+      "default": "India",
+      "prefill": "India",
+      "editor": "textfield"
+    },
+    "companyName": {
+      "title": "Company Name",
+      "type": "string",
+      "description": "Filter postings by hiring company name (e.g., Google, Tata, Infosys).",
+      "default": "",
+      "editor": "textfield"
+    },
+    "jobType": {
+      "title": "Job Type",
+      "type": "string",
+      "description": "Employment type filter.",
+      "enum": ["all", "FULLTIME", "PARTTIME", "CONTRACTOR", "INTERN"],
+      "enumTitles": ["All Job Types", "Full-time", "Part-time", "Contract", "Internship"],
+      "default": "all",
+      "editor": "select"
+    },
+    "workplaceType": {
+      "title": "Workplace Type",
+      "type": "string",
+      "description": "Workplace mode filter (On-site, Remote, Hybrid).",
+      "enum": ["all", "on-site", "remote", "hybrid"],
+      "enumTitles": ["All Modes", "On-site", "Remote", "Hybrid"],
+      "default": "all",
+      "editor": "select"
+    },
+    "experienceLevel": {
+      "title": "Experience Level",
+      "type": "string",
+      "description": "Required experience level filter.",
+      "enum": ["all", "internship", "entry", "associate", "mid_senior", "director", "executive"],
+      "enumTitles": ["All Levels", "Internship", "Entry level", "Associate", "Mid-Senior level", "Director", "Executive"],
+      "default": "all",
+      "editor": "select"
+    },
+    "datePosted": {
+      "title": "Date Posted Filter",
+      "type": "string",
+      "description": "Filter postings by recency.",
+      "enum": ["all", "today", "3days", "week", "month"],
+      "enumTitles": ["All time", "Past 24 hours", "Past 3 days", "Past month"],
+      "default": "all",
+      "prefill": "all",
+      "editor": "select"
+    },
+    "minSalary": {
+      "title": "Minimum Salary",
+      "type": "integer",
+      "description": "Filter listings with salary above this threshold.",
+      "editor": "number",
+      "minimum": 0
+    },
+    "maxSalary": {
+      "title": "Maximum Salary",
+      "type": "integer",
+      "description": "Filter listings with salary below this threshold.",
+      "editor": "number",
+      "minimum": 0
+    },
+    "pagesToFetch": {
+      "title": "Pages to Fetch",
+      "type": "integer",
+      "description": "Number of result pages to scrape per search.",
+      "default": 1,
+      "prefill": 1,
+      "minimum": 1,
+      "maximum": 50,
+      "editor": "number"
+    },
+    "maxResults": {
+      "title": "Maximum Total Results Cap",
+      "type": "integer",
+      "description": "Maximum total number of jobs to retrieve and save across all queries.",
+      "default": 50,
+      "prefill": 50,
+      "minimum": 1,
+      "editor": "number"
+    },
+    "targetLocations": {
+      "title": "Target Locations List",
+      "type": "array",
+      "description": "Supplementary target locations to scrape in batch (e.g. ['Bengaluru', 'Delhi', 'Hyderabad']).",
+      "editor": "json",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fetchFullDescription": {
+      "title": "Fetch Full Job Description",
+      "type": "boolean",
+      "description": "Extract full HTML/markdown text of job descriptions.",
+      "default": true,
+      "editor": "checkbox"
+    },
+    "forceFresh": {
+      "title": "Force Fresh Results",
+      "type": "boolean",
+      "description": "Bypass 24-hour cache and fetch fresh live results.",
+      "default": false,
+      "editor": "checkbox"
+    },
+    "proxyConfiguration": {
+      "title": "Proxy Configuration",
+      "type": "object",
+      "description": "Apify Proxy settings for enterprise network routing.",
+      "editor": "proxy"
+    }
+  },
+  "required": []
+}
