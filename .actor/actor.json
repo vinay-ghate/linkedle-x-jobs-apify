@@ -5,7 +5,26 @@
   "description": "Enterprise-grade scraper for LinkedIn Jobs and direct LinkedIn search URLs. Supports multi-filter search, Indian & global markets, batch keywords, deduplication, and pay-per-result integration.",
   "version": "1.1",
   "input": "./input_schema.json",
-  "output": "./output_schema.json",
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "title": "LinkedIn Jobs Scraper Output Schema",
+    "description": "Defines dataset job search results and key-value store cache collections for Apify Console UI and AI agent integration.",
+    "type": "object",
+    "properties": {
+      "results": {
+        "type": "string",
+        "title": "Job Results",
+        "description": "Structured LinkedIn job search listings including titles, companies, locations, skills, salary, and URLs.",
+        "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+      },
+      "cachedSearchResults": {
+        "type": "string",
+        "title": "Cached Query Data",
+        "description": "24-hour cached search query payloads stored in key-value store for deduplication.",
+        "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys?collection=cached-search-results"
+      }
+    }
+  },
   "categories": [
     "SCRAPERS",
     "JOBS"
